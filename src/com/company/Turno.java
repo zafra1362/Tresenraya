@@ -8,7 +8,7 @@ public class Turno {
 
     String turno;
 
-    public void turnos(){
+    public void turnos(String turno){
 
         System.out.println("Tu turno : " + turno);
     }
