@@ -17,26 +17,27 @@ public class Tresenraya {
     public void iniciar() {
         turno = " 0 ";
 
-        tablero.tablero = new String[tablero.columnas][tablero.filas];
+        tablero.tablero = new String[tablero.filas][tablero.columnas];
         tablero.rellenar(tablero);
 
             rellenar();
 
-            turno();
+            cambio();
         }
 
 
     private void rellenar() {
         t.turnos(turno);
-        int columna = ficha.posicionColumna();
         int fila = ficha.posicionFila();
+        int columna = ficha.posicionColumna();
+        System.out.println("");
         tablero.colocar(columna, fila, turno);
         tablero.mostrar();
     }
 
 
-    private void turno() {
-        if (turno.equals(" 0 ")) turno = " x ";
+    private void cambio() {
+        if (turno == " 0 ") turno = " X ";
         else turno = " 0 ";
     }
 }

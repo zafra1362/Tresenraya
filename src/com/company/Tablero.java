@@ -5,7 +5,7 @@ public class Tablero {
     int columnas;
     int filas;
 
-    public Tablero(int columnas, int filas){
+    public Tablero(int filas, int columnas){
         this.filas = filas;
         this.columnas = columnas;
     }
@@ -15,24 +15,25 @@ public class Tablero {
     String turno;
 
      void colocar(int fichac, int fichaf , String turno) {
-        if (tablero[fichac - 1][fichaf - 1] == " _ ") {
-            tablero[fichac - 1][fichaf - 1] = turno;
+        if (tablero[fichaf - 1][fichac - 1] == " _ ") {
+            tablero[fichaf - 1][fichac - 1] = turno;
         }
     }
 
     public void rellenar(Tablero tablero) {
-    for (int x = 0; x < tablero.columnas ; x++) {
-        for (int y = 0; y < tablero.filas; y++) {
-            tablero.tablero [x][y] = "-";
+    for (int x = 0; x < tablero.filas ; x++) {
+        for (int y = 0; y < tablero.columnas; y++) {
+            tablero.tablero [x][y] = " _ ";
             }
         }
     }
 
     public void mostrar() {
-        for (int x = 0; x < columnas; x++) {
-            for (int y = 0; y < filas; y++) {
-                System.out.println(tablero[x][y]);
+        for (int x = 0; x < filas; x++) {
+            for (int y = 0; y < columnas; y++) {
+                System.out.print(tablero[x][y]);
             }
+            System.out.println("");
         }
     }
 }
